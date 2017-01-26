@@ -1,0 +1,26 @@
+<div layout="row">
+  <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-open="true">
+    <md-toolbar class="md-tall md-hue-2">
+      <span flex></span>
+      <div layout="column" class="md-toolbar-tools-bottom inset">
+        <!--<user-avatar></user-avatar>-->
+        <span></span>
+        <div>Bounjour {{dashboardCtrl.user.firstName}}</div>
+      </div>
+    </md-toolbar>
+    <md-list role="navigation">
+      <md-item ng-repeat="item in dashboardCtrl.menu">
+        <a>
+          <md-item-content md-ink-ripple layout="row" layout-align="start center">
+            <div class="inset">
+              <md-icon md-font-icon="{{item.icon}}"></md-icon>
+            </div>
+            <div class="inset">{{item.title}}
+            </div>
+          </md-item-content>
+        </a>
+      </md-item>
+  </md-sidenav>
+  <md-content class="relative" layout="column" layout-fill flex role="main">hello</md-content>
+
+</div>

@@ -6,7 +6,7 @@
             STATES: {
                 ROOT: '/',
                 LOGIN: '/login',
-                ORDER: '/order'
+                DASHBOARD: 'dashboard'
             },
 
             FOLDER:{

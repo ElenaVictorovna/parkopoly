@@ -10,7 +10,7 @@
       'ngSanitize',
       'ngMessages',
       'ngAria',
-      'ngRoute',
+      'ui.router',
       'ngMaterial',
       'toastr',
       'login',
