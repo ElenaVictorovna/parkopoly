@@ -1,0 +1,74 @@
+<div id="login" layout="column" layout-fill>
+
+  <page-header></page-header>
+
+  <main layout="row" flex="100" layout-align="center center">
+
+    <div flex="100" layout-align="center center">
+      <h1 layout="row" layout-align="center">La communauté de drivers connectés</h1>
+      <h2 layout="row" layout-align="center">Pour vous simplifier la vie</h2>
+
+      <div layout="row" layout-align="center">
+
+        <form flex="50" name="userForm" ng-submit="loginCtrl.login()" class="userForm">
+
+          <md-card-header layout="row" layout-align="left left">
+            <md-card-header-text class="md-title">
+              S'identifier
+            </md-card-header-text>
+          </md-card-header>
+
+          <md-card-content layout="column" layout-align="center">
+
+            <md-input-container md-no-float="" class="md-block">
+              <input
+                type="email"
+                name="email"
+                ng-model="user.email"
+                placeholder="Votre email"
+                required>
+              <div ng-messages="userForm.email.$error"
+                   ng-show="userForm.email.$invalid && (userForm.email.$touched || userForm.email.$submitted)">
+                <div ng-message="required">Email requis.</div>
+              </div>
+            </md-input-container>
+
+            <md-input-container md-no-float="" class="md-block">
+              <input
+                type="password"
+                ng-model="user.password"
+                name="password"
+                placeholder="Votre mot de passe"
+                ng-minlength="6"
+                required>
+              <div ng-messages="userForm.password.$error"
+                   ng-show="userForm.password.$invalid && (userForm.password.$touched || userForm.password.$submitted)">
+                <div ng-message="required">Mot de passe requis.</div>
+                <div ng-message="minlength">Mot de passe doit avoir au moins 6 charactères.</div>
+              </div>
+              <a href="#" class="forgotPasswordLink">Mot de passe oublié?</a>
+            </md-input-container>
+
+          </md-card-content>
+
+          <md-card-actions layout="row" layout-align="right">
+            <md-button
+              type="submit"
+              class="md-raised md-warn animated infinite"
+              layout-align="right"
+              data-ng-disabled="userForm.$invalid">
+              Se connecter
+            </md-button>
+          </md-card-actions>
+
+        </form>
+      </div>
+
+    </div>
+
+  </main>
+
+  <page-footer></page-footer>
+
+</div>
+

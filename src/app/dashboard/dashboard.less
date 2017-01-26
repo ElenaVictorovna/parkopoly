@@ -1,0 +1,65 @@
+#login {
+  color: white;
+
+  header {
+    font-size: 0;
+    font-family: 'Montserrat', serif;
+    height: 64px;
+    padding: 8px 16px;
+    background-image: url("/assets/images/bg_header.png");
+    background-repeat: repeat-x;
+
+    md-nav-bar{
+      font-size: 14px;
+      md-nav-item{
+        padding: 0 4em;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        &:not([disabled]):hover{
+          text-decoration: underline;
+        }
+      }
+    }
+
+  }
+
+  main{
+    background: url("/assets/images/bg_home_main.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  h1{
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .userForm{
+    color: #424242;
+    background-color: white;
+    padding: 24px;
+    max-width: 450px;
+  }
+
+  .forgotPasswordLink{
+    color: #424242;
+    float: right;
+    margin-top: 10px;
+  }
+
+  footer {
+    height: 56px;
+    background-color: #424242;
+  }
+
+}
+.alertPanel, .alertPanel>md-icon {
+  color: #ff5644;
+}
