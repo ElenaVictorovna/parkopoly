@@ -40,20 +40,6 @@
             controllerAs: 'dashboardCtrl'
           }
         }
-      })
-
-      .state('user.createMission', {
-        url: appConstant.STATES.ROOT,
-        views: {
-          'main@': {
-            templateUrl: 'app/dashboard/dashboard.html',
-            controller: 'DashboardController',
-            controllerAs: 'dashboardCtrl'
-          }
-          //'index@index': {
-          //  templateUrl: 'js/Angular/Application/View/main/home.html'
-          //}
-        }
       });
 
   }

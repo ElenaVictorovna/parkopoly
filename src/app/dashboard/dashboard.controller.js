@@ -11,29 +11,37 @@
 
     var vm = this;
 
+    vm.user = {
+      firstName: 'Arthur',
+      lastName: 'Darde',
+      fullName: 'Arthur Darde',
+      email: 'fakeemail@gmail.com',
+      picture: 'assets/images/user_img.png'
+    };
+
     vm.menu = [
       {
-        link: 'account box',
+        route: 'user.dashboard',
         title: 'Dashboard',
-        icon: ''
+        icon: 'account_box'
       }, {
-        link: '',
+        route: 'user.createMission',
         title: 'Creer une mission',
         icon: 'send'
       }, {
-        link: '',
+        route: 'user.missionList',
         title: 'Visualiser less missions',
         icon: 'flag'
       }, {
-        link: '',
+        route: 'user.pointsOfSale',
         title: 'Comptes utilisateurs at points de vende',
-        icon: 'local offer'
+        icon: 'local_offer'
       }, {
-        link: '',
+        route: 'user.facturation',
         title: 'Facturation',
-        icon: 'shopping cart'
+        icon: 'shopping_cart'
       }, {
-        link: '',
+        route: 'user.profile',
         title: 'Informations personnelles',
         icon: 'group'
       }
