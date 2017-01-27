@@ -2,11 +2,18 @@ footer {
   height: 56px;
   background-color: #424242;
 
-  md-nav-bar{
-    font-size: 14px;
-    md-nav-item{
-      margin: 0 25px;
+  .md-nav-item {
+    .md-button, .md-button.md-unselected {
+      line-height: 48px;
       color: white;
+      span {
+        vertical-align: bottom;
+      }
     }
+  }
+
+  md-nav-ink-bar {
+    color: white;
+    background-color: white;
   }
 }
