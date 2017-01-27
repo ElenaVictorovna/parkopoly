@@ -26,14 +26,12 @@
           '    <md-list>'+
           '      <md-list-item>'+
           '       <p>Hello World !</p>' +
+          '       <a href="">' +
+          '         <md-icon ng-click="dialog.closeDialog()"> clear </md-icon>' +
+          '       </a>' +
           '     </md-list-item>' +
           '    </md-list>'+
           '  </md-dialog-content>' +
-          '  <md-dialog-actions>' +
-          '    <md-button ng-click="dialog.closeDialog()" class="md-primary">' +
-          '      Close Dialog' +
-          '    </md-button>' +
-          '  </md-dialog-actions>' +
           '</md-dialog>',
           locals: {
             items: vm.items
