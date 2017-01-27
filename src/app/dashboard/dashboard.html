@@ -1,7 +1,16 @@
-<div>
-  <md-card>
-    <h4 class="md-headline">Mon agenda</h4>
-
-  </md-card>
+<div id="dashboard_page">
+  <header flex="100" layout="row" layout-align="center center">
+    <h4 class="md-headline" flex="20"  layout="column">Mon agenda</h4>
+    <span ng-click="dashboardCtrl.goToCurrentDate()" flex="40"  layout="column">{{dashboardCtrl.currentDateString}}</span>
+    <div flex="40" layout="column" layout-align="right right">
+      <md-button ng-click="dashboardCtrl.prev()">
+        <ng-md-icon icon="chevron_left"></ng-md-icon>
+      </md-button>
+      <span>Semaine du {{}} au {{}} Month</span>
+      <md-button ng-click="dashboardCtrl.next()">
+        <ng-md-icon icon="chevron_right"></ng-md-icon>
+      </md-button>
+    </div>
+  </header>
   <div ui-calendar="dashboardCtrl.uiConfig.calendar" ng-model="dashboardCtrl.eventSources" calendar="dashboardCtrl.calendar"></div>
 </div>

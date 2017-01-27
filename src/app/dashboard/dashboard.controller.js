@@ -5,9 +5,9 @@
     .module('parkopoly')
     .controller('DashboardController', DashboardController);
 
-  DashboardController.$inject = ['$timeout'];
+  DashboardController.$inject = ['uiCalendarConfig'];
 
-  function DashboardController($timeout) {
+  function DashboardController(uiCalendarConfig) {
 
     var vm = this;
 
@@ -19,6 +19,13 @@
     var d = vm.currentDate.getDate(),
       m = vm.currentDate.getMonth(),
       y = vm.currentDate.getFullYear();
+
+    vm.prev = function() {
+      uiCalendarConfig.calendars['dashboardCtrl.calendar'].prev();
+    };
+    vm.next = function() {
+      uiCalendarConfig.calendars['dashboardCtrl.calendar'].next();
+    };
 
     // calendar.fullCalendar('changeView', 'basicWeek');
 
@@ -61,7 +68,6 @@
         // timeFormat: 'hh:mm',
         header: {
           left: '',
-          center: 'title',
           right: 'today prev,next'
         },
         columnFormat: 'dddd D'
