@@ -3,8 +3,17 @@
 
   angular
     .module('parkopoly')
+    .config(configBlock)
     .run(runBlock)
     .run(routeListener);
+
+  /** @ngInject */
+  function configBlock($urlRouterProvider) {
+
+    // For any unmatched url, send to /index
+    $urlRouterProvider.otherwise('/login');
+
+  }
 
   /** @ngInject */
   function runBlock($log) {
@@ -15,6 +24,8 @@
   function routeListener($rootScope, $http, $location, $cookies){
     // keep user logged in after page refresh
     $rootScope.globals = $cookies.getObject('globals') || {};
+
+
 
     //$rootScope.$on('$locationChangeStart', function (event, next, current) {
     //  // redirect to login page if not logged in

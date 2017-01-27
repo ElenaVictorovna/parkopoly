@@ -9,7 +9,7 @@
 
     $stateProvider
       .state('login', {
-        url: appConstant.STATES.LOGIN,
+        url: appConstant.STATES.LOGIN.URL,
         views: {
           'main@': {
             templateUrl: 'app/login/login.html',
@@ -20,11 +20,11 @@
       })
 
       .state('user', {
-        url: appConstant.STATES.ROOT,
+        url: appConstant.STATES.MAIN.URL,
         abstract: true,
         views: {
           'main@': {
-            templateUrl: 'app/account.html',
+            templateUrl: 'app/main/main.html',
             controller: 'DashboardController',
             controllerAs: 'dashboardCtrl'
           }
@@ -32,7 +32,7 @@
       })
 
       .state('user.dashboard', {
-        url: appConstant.STATES.DASHBOARD,
+        url: appConstant.STATES.DASHBOARD.URL,
         views: {
           'content@user': {
             templateUrl: 'app/dashboard/dashboard.html',

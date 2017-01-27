@@ -1,0 +1,42 @@
+<div id="account" layout="column" layout-fill>
+
+  <page-header></page-header>
+
+  <md-content flex layout="row">
+    <!--<md-content layout="column" flex role="main">hello</md-content>-->
+
+    <div layout="column" flex="30">
+      <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-open="true" md-disable-backdrop="true">
+        <md-toolbar class="md-tall md-hue-2">
+          <span flex></span>
+          <div layout="column" class="md-toolbar-tools-bottom inset">
+          <div layout="column" layout-align="center">
+            <img class="user-avatar" ng-src="{{dashboardCtrl.user.picture}}"/>
+          </div>
+          <span></span>
+          <div>Bounjour {{dashboardCtrl.user.firstName}}</div>
+          </div>
+        </md-toolbar>
+        <md-list role="navigation">
+          <md-item ng-repeat="item in dashboardCtrl.menu" >
+          <a ui-sref="{{item.route}}" ui-sref-active="active">
+          <md-item-content md-ink-ripple layout="row" layout-align="start center">
+          <div class="inset">
+            <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+          </div>
+          <div class="inset">{{item.title}}
+          </div>
+          </md-item-content>
+          </a>
+          </md-item>
+        </md-list>
+      </md-sidenav>
+    </div>
+
+    <div layout="column" flex="70">world</div>
+
+  </md-content>
+
+  <page-footer></page-footer>
+
+</div>

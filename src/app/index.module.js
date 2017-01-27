@@ -15,6 +15,7 @@
       'toastr',
       'login',
       'dashboard',
+      'ngMdIcons',
 
       'material.components.eventCalendar'
     ]);
