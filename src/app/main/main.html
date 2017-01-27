@@ -3,22 +3,21 @@
   <page-header></page-header>
 
   <md-content flex layout="row">
-    <!--<md-content layout="column" flex role="main">hello</md-content>-->
 
-    <div layout="column" flex="30">
-      <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-open="true" md-disable-backdrop="true">
+    <div layout="column" style="width: 256px">
+      <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-open="true" md-disable-backdrop>
         <md-toolbar class="md-tall md-hue-2">
           <span flex></span>
           <div layout="column" class="md-toolbar-tools-bottom inset">
           <div layout="column" layout-align="center">
-            <img class="user-avatar" ng-src="{{dashboardCtrl.user.picture}}"/>
+            <img class="user-avatar" ng-src="{{mainCtrl.user.picture}}"/>
           </div>
           <span></span>
-          <div>Bounjour {{dashboardCtrl.user.firstName}}</div>
+          <div>Bounjour {{mainCtrl.user.firstName}}</div>
           </div>
         </md-toolbar>
         <md-list role="navigation">
-          <md-item ng-repeat="item in dashboardCtrl.menu" >
+          <md-item ng-repeat="item in mainCtrl.menu" >
           <a ui-sref="{{item.route}}" ui-sref-active="active">
           <md-item-content md-ink-ripple layout="row" layout-align="start center">
           <div class="inset">
@@ -33,7 +32,7 @@
       </md-sidenav>
     </div>
 
-    <div layout="column" flex="70">world</div>
+    <div layout="column" flex ui-view="content"></div>
 
   </md-content>
 

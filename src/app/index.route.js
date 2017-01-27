@@ -25,8 +25,8 @@
         views: {
           'main@': {
             templateUrl: 'app/main/main.html',
-            controller: 'DashboardController',
-            controllerAs: 'dashboardCtrl'
+            controller: 'MainController',
+            controllerAs: 'mainCtrl'
           }
         }
       })

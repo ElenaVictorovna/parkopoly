@@ -14,10 +14,10 @@
       'ngMaterial',
       'toastr',
       'login',
+      'main',
       'dashboard',
       'ngMdIcons',
-
-      'material.components.eventCalendar'
+      'ui.calendar'
     ]);
 
 })();
