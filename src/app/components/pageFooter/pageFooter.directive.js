@@ -3,10 +3,10 @@
 
   angular
     .module('parkopoly')
-    .directive('pageFooter', ['$mdDialog', pageFooter]);
+    .directive('pageFooter', pageFooter);
 
   /** @ngInject */
-  pageFooter.$inject = [];
+  pageFooter.$inject = ['$mdDialog'];
 
   function pageFooter() {
     /** @ngInject */
@@ -14,37 +14,30 @@
 
       var vm = this;
 
-      vm.showDialog = function($event) {
-        var parentEl = angular.element(document.body);
+      vm.showCGUDialog = function(){
+        showDialog('Here can be CGU info');
+      };
 
+      vm.showContactsDialog = function(){
+        showDialog('Here can be your contacts');
+      };
+
+      function showDialog(content) {
         $mdDialog.show({
-          parent: parentEl,
-          targetEvent: $event,
-          template:
-          '<md-dialog aria-label="List dialog">' +
-          '  <md-dialog-content>'+
-          '    <md-list>'+
-          '      <md-list-item>'+
-          '       <p>Hello World !</p>' +
-          '       <a href="">' +
-          '         <md-icon ng-click="dialog.closeDialog()"> clear </md-icon>' +
-          '       </a>' +
-          '     </md-list-item>' +
-          '    </md-list>'+
-          '  </md-dialog-content>' +
-          '</md-dialog>',
+          templateUrl: '/app/dialogs/baseDialog.html',
+          clickOutsideToClose: true,
           locals: {
-            items: vm.items
+            content: content
           },
           controllerAs: 'dialog',
-          controller: function test($scope, $mdDialog, items) {
-            vm.items = items;
+          controller: function ($mdDialog, content) {
+            this.content = content;
             this.closeDialog = function() {
               $mdDialog.hide();
             };
           }
         });
-      };
+      }
 
     }
 

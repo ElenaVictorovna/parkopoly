@@ -2,74 +2,74 @@
 
   <page-header></page-header>
 
-  <main layout="row" flex="100" layout-align="center center">
+  <md-content flex layout="row" layout-align="center center">
 
-    <div flex="100" layout-align="center center">
-      <h1 layout="row" layout-align="center">La communauté de drivers connectés</h1>
-      <h2 layout="row" layout-align="center" class="h1">Pour vous simplifier la vie</h2>
+      <div flex="100" layout-align="center center">
+        <h1 layout="row" layout-align="center" class="white_text">La communauté de drivers connectés</h1>
+        <h2 layout="row" layout-align="center" class="h1 white_text">Pour vous simplifier la vie</h2>
 
-      <div layout="row" layout-align="center">
+        <div layout="row" layout-align="center">
 
-        <form flex="50" name="userForm" ng-submit="loginCtrl.login()" class="userForm">
+          <form flex="50" name="userForm" ng-submit="loginCtrl.login()" class="userForm">
 
-          <div class="md-headline">
-            S'identifier
-            <a href="">
-              <md-icon> clear </md-icon>
-            </a>
-            </span>
-          </div>
-
-          <md-input-container md-no-float="" class="md-block">
-            <input
-              type="email"
-              name="email"
-              ng-model="credentials.email"
-              placeholder="Votre email"
-              required>
-
-            <div ng-messages="userForm.email.$error"
-                 ng-show="userForm.email.$invalid && (userForm.email.$touched || userForm.email.$submitted)">
-              <div ng-message="required">Email requis.</div>
-              <div ng-message="email">Email n'est pas valide.</div>
+            <div class="md-headline">
+              S'identifier
+              <a href="">
+                <md-icon> clear </md-icon>
+              </a>
+              </span>
             </div>
 
-          </md-input-container>
+            <md-input-container md-no-float="" class="md-block">
+              <input
+                type="email"
+                name="email"
+                ng-model="credentials.email"
+                placeholder="Votre email"
+                required>
 
-          <md-input-container md-no-float="" class="md-block">
-            <input
-              type="password"
-              ng-model="credentials.password"
-              name="password"
-              placeholder="Votre mot de passe"
-              ng-minlength="6"
-              required>
+              <div ng-messages="userForm.email.$error"
+                   ng-show="userForm.email.$invalid && (userForm.email.$touched || userForm.email.$submitted)">
+                <div ng-message="required">Email requis.</div>
+                <div ng-message="email">Email n'est pas valide.</div>
+              </div>
 
-            <div ng-messages="userForm.password.$error"
-                 ng-show="userForm.password.$invalid && (userForm.password.$touched || userForm.password.$submitted)">
-              <div ng-message="required">Mot de passe requis.</div>
-              <div ng-message="minlength">Mot de passe doit avoir au moins 6 charactères.</div>
-            </div>
+            </md-input-container>
 
-            <a href="#" class="forgotPasswordLink">Mot de passe oublié ?</a>
+            <md-input-container md-no-float="" class="md-block">
+              <input
+                type="password"
+                ng-model="credentials.password"
+                name="password"
+                placeholder="Votre mot de passe"
+                ng-minlength="6"
+                required>
 
-          </md-input-container>
+              <div ng-messages="userForm.password.$error"
+                   ng-show="userForm.password.$invalid && (userForm.password.$touched || userForm.password.$submitted)">
+                <div ng-message="required">Mot de passe requis.</div>
+                <div ng-message="minlength">Mot de passe doit avoir au moins 6 charactères.</div>
+              </div>
 
-          <md-card-actions layout="row" layout-align="right">
-            <md-button
-              type="submit"
-              class="md-raised md-warn animated infinite"
-              layout-align="right">
-              Se connecter
-            </md-button>
-          </md-card-actions>
+              <a href="#" class="forgotPasswordLink" ng-click="loginCtrl.showResetDialog()">Mot de passe oublié ?</a>
 
-        </form>
+            </md-input-container>
+
+            <md-card-actions layout="row" layout-align="right">
+              <md-button
+                type="submit"
+                class="md-raised md-warn animated infinite white_text"
+                layout-align="right">
+                Se connecter
+              </md-button>
+            </md-card-actions>
+
+          </form>
+        </div>
+
       </div>
 
-    </div>
-
-  </main>
+  </md-content>
 
   <page-footer></page-footer>
 

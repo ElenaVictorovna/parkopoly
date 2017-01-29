@@ -1,22 +1,26 @@
 .main_header {
   height: 64px;
   padding: 8px 24px;
+  box-sizing: border-box;
   background-image: url("/assets/images/bg_header.png");
   background-repeat: repeat-x;
 
   .md-nav-bar {
-    height: 57px;
+    height: 64px;
   }
 
   .md-nav-item {
       padding: 0 2em;
+    *{
+      color: white;
+    }
 
     .md-button, .md-button.md-unselected {
       font-size: 16px;
-      line-height: 57px;
+      line-height: 64px;
       color: white;
       text-transform: none;
-
+      padding: 0;
       span {
         vertical-align: bottom;
       }
@@ -38,3 +42,4 @@
     background-color: white;
   }
 }
+

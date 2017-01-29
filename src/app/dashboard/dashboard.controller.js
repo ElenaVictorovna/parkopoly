@@ -4,7 +4,7 @@
   var dayNamesFr = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
 
   angular
-    .module('parkopoly')
+    .module('dashboard')
     .controller('DashboardController', DashboardController);
 
   DashboardController.$inject = ['uiCalendarConfig', 'backendApiFactory'];

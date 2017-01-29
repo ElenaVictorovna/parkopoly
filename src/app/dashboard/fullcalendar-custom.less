@@ -1,0 +1,118 @@
+.fc-view-container{
+  font-size: 12px;
+}
+
+.fc-head .fc-head-container{
+  border-style: none !important;
+  height: 86px;
+  tr{
+    height: 86px;
+    th{
+      font-weight: normal;
+      text-transform: capitalize;
+      vertical-align: middle;
+      line-height: 28px;
+    }
+  }
+}
+
+.fc-head .fc-head-container .fc-widget-header{
+  border-style: none !important;
+}
+
+.fc-head .fc-head-container .fc-day-header span{
+  color: @orangeColor;
+  font-size: 16px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  line-height: 30px;
+}
+
+.fc-head .fc-head-container .fc-today span{
+  color: white;
+  background-color: @orangeColor;
+}
+
+
+.fc-body>tr>td.fc-widget-content{
+  border-top: none !important;
+  border-bottom: none !important;
+}
+.fc-now-indicator.fc-now-indicator-line{
+  width: 100% !important;
+}
+.fc td.fc-axis {
+  border-right: none !important;
+  border-left: none !important;
+}
+
+.fc td.fc-day {
+  border-top: none !important;
+}
+
+.fc td.fc-widget-content {
+  border-left: none !important;
+}
+
+.fc-time-grid .fc-slats td {
+  height: 46px;
+}
+
+.fc-now-indicator-line{
+  border-color: @orangeColor;
+  &:before{
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: @orangeColor;
+    position: relative;
+    top: -7px;
+    left: -7px;
+  }
+}
+
+.fc-time-grid .fc-now-indicator-arrow{
+  width: 100%;
+  height: 1px;
+  background-color: @orangeColor;
+  border: none;
+  z-index: 10;
+  margin-top: 0;
+}
+
+.fc-time-grid .fc-divider.fc-widget-header{
+  display: none !important;
+}
+
+.fc-event{
+  border-radius: 0;
+  border: none;
+  background-color: #bababa;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  -webkit-box-shadow: 0px 2px 7px -2px rgba(186,186,186,0.75);
+  -moz-box-shadow: 0px 2px 7px -2px rgba(186,186,186,0.75);
+  box-shadow: 0px 2px 7px -2px rgba(186,186,186,0.75);
+  &.active_event{
+    background-color: #fbb03b;
+    color: @orangeColor;
+  }
+  *{
+    display: inline-block;
+  }
+}
+
+.fc-ltr .fc-time-grid .fc-event-container{
+  margin: 0;
+}
+
+.fc-unthemed td.fc-today{
+  background-color: inherit;
+}

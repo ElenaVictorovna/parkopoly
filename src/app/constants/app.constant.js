@@ -7,7 +7,12 @@
 
                 LOGIN: {
                   URL: '/login',
-                  NAME: ''
+                  NAME: 'login'
+                },
+
+                CONTACTS: {
+                  URL: '/contacts',
+                  NAME: 'contacts'
                 },
 
                 MAIN: {

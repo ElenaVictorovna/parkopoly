@@ -13,7 +13,8 @@
         firstName: 'Arthur',
         lastName: 'Darde',
         fullName: 'Arthur Darde',
-        email: 'fakeemail@gmail.com'
+        email: 'fakeemail@gmail.com',
+        picture: 'assets/images/user_img.png'
       },
 
       EVENTS: [{

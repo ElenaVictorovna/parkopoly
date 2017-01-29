@@ -2,46 +2,42 @@
   'use strict';
 
   angular
-    .module('parkopoly')
+    .module('main')
     .controller('MainController', MainController);
 
-  MainController.$inject = [];
+  MainController.$inject = ['userService'];
 
-  function MainController() {
+  function MainController(userService) {
 
     var vm = this;
 
-    vm.user = {
-      firstName: 'Arthur',
-      lastName: 'Darde',
-      fullName: 'Arthur Darde',
-      email: 'fakeemail@gmail.com',
-      picture: 'assets/images/user_img.png'
-    };
+    userService.get().then(function(data){
+      vm.user = data;
+    });
 
     vm.menu = [
       {
-        route: 'user.dashboard',
+        route: 'main.dashboard',
         title: 'Dashboard',
         icon: 'account_box'
       }, {
-        route: 'user.createMission',
+        route: 'main.createMission',
         title: 'Creer une mission',
         icon: 'send'
       }, {
-        route: 'user.missionList',
+        route: 'main.missionList',
         title: 'Visualiser less missions',
         icon: 'flag'
       }, {
-        route: 'user.pointsOfSale',
+        route: 'main.pointsOfSale',
         title: 'Comptes utilisateurs at points de vende',
         icon: 'local_offer'
       }, {
-        route: 'user.facturation',
+        route: 'main.facturation',
         title: 'Facturation',
         icon: 'shopping_cart'
       }, {
-        route: 'user.profile',
+        route: 'main.profile',
         title: 'Informations personnelles',
         icon: 'group'
       }

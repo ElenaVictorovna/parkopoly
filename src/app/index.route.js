@@ -8,7 +8,7 @@
   function routeConfig($stateProvider, appConstant) {
 
     $stateProvider
-      .state('login', {
+      .state(appConstant.STATES.LOGIN.NAME, {
         url: appConstant.STATES.LOGIN.URL,
         views: {
           'main@': {
@@ -19,7 +19,7 @@
         }
       })
 
-      .state('user', {
+      .state(appConstant.STATES.MAIN.NAME, {
         url: appConstant.STATES.MAIN.URL,
         abstract: true,
         views: {
@@ -31,10 +31,10 @@
         }
       })
 
-      .state('user.dashboard', {
+      .state(appConstant.STATES.DASHBOARD.NAME, {
         url: appConstant.STATES.DASHBOARD.URL,
         views: {
-          'content@user': {
+          'content@main': {
             templateUrl: 'app/dashboard/dashboard.html',
             controller: 'DashboardController',
             controllerAs: 'dashboardCtrl'

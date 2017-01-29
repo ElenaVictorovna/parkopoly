@@ -8,11 +8,11 @@
 
   <md-nav-bar class="nav-buttons">
 
-      <md-nav-item md-nav-sref="#">Demander un compte</md-nav-item>
+      <md-nav-item md-nav-click="headerCtrl.showRequestDialog($event)">Demander un compte</md-nav-item>
 
-      <md-nav-item md-nav-sref="#">FAQ</md-nav-item>
+      <md-nav-item md-nav-click="headerCtrl.showFAQDialog($event)">FAQ</md-nav-item>
 
-      <md-nav-item md-nav-sref="#">FR <md-icon> arrow_drop_down </md-icon></md-nav-item>
+      <md-nav-item md-nav-click="headerCtrl.showLangDialog($event)">FR <md-icon> arrow_drop_down </md-icon></md-nav-item>
 
   </md-nav-bar>
 

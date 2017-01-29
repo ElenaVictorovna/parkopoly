@@ -13,11 +13,17 @@
       'ui.router',
       'ngMaterial',
       'toastr',
+      'ngMdIcons',
+      'ui.calendar',
+
+      //Application's modules
       'login',
       'main',
-      'dashboard',
-      'ngMdIcons',
-      'ui.calendar'
+      'dashboard'
     ]);
+
+  angular.module('login', []);
+  angular.module('main', []);
+  angular.module('dashboard', []);
 
 })();

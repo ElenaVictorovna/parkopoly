@@ -1,11 +1,13 @@
 <div id="dashboard_page">
+
   <header flex>
+
     <h4 class="md-headline">Mon agenda</h4>
-    <div flex>
-      <md-button ng-click="dashboardCtrl.today()">
-        {{dashboardCtrl.currentDateString}}
-      </md-button>
-    </div>
+
+    <md-button ng-click="dashboardCtrl.today()">
+      {{dashboardCtrl.currentDateString}}
+    </md-button>
+
     <div class="control_buttons">
       <md-button ng-click="dashboardCtrl.prev()">
         <ng-md-icon icon="chevron_left"></ng-md-icon>

@@ -1,0 +1,39 @@
+<md-dialog ng-cloak aria-label="List dialog" id="reset">
+  <a href="" class="dialog_close_button">
+    <md-icon ng-click="resetCtrl.closeDialog()"> clear </md-icon>
+  </a>
+  <form name="resetForm" ng-submit="resetCtrl.reset()" layout="column" layout-align="space-between" layout-fill>
+    <md-dialog-content layout="column" layout-align="space-around center" layout-margin layout-padding  style="padding-top: 20px;">
+      <md-input-container layout-fill md-no-float=""  class="md-block">
+
+        <input name="email"
+               ng-model="email"
+               required
+               minlength="10"
+               maxlength="100"
+               placeholder="Votre email"
+               ng-pattern="/^.+@.+\..+$/"/>
+        <div ng-messages="resetForm.email.$error" ng-show="resetForm.email.$dirty">
+          <div ng-message="required">Email requis.</div>
+          <div ng-message="minlength">L'email doit faire plus de 10 charactères.</div>
+          <div ng-message="maxlength">L'email doit faire moins de 100 charactères.</div>
+          <div ng-message="pattern">Ceci n'est pas une adresse valide.</div>
+        </div>
+      </md-input-container>
+
+      <div ng-if="error" class="alertPanel">
+        <md-icon  md-font-set="material-icons">error</md-icon>
+        Réinitialisation du mot de passe a échoué.
+      </div>
+      <div ng-if="loading" layout="row" layout-sm="column" layout-align="space-around">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions flex="none" layout="row" layout-align="end center">
+      <md-button flex="none" type="submit" class="md-raised md-warn animated infinite white_text">
+        Envoyer
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

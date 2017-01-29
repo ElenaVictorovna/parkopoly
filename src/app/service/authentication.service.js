@@ -5,34 +5,26 @@
     .module('parkopoly')
     .factory('authenticationService', authenticationService);
 
-  authenticationService.$inject = ['$rootScope', '$cookies', '$q', 'backendApiFactory', '$window'];
+  authenticationService.$inject = ['$q', 'backendApiFactory', 'userService'];
 
-  function authenticationService($rootScope, $cookies, $q, backendApiFactory, $window) {
+  function authenticationService($q, backendApiFactory, userService) {
 
     /**
      * Authenticate a user and store auth data in cookie
      * @param credentials user / password to authenticate
      * @returns {Function} promise after backend response
      */
-    function authenticate(credentials) {
+    function auth(credentials) {
       var deferred = $q.defer();
 
       backendApiFactory.authenticate(credentials)
         .then(function (authdata) {
 
-          $cookies.putObject('authenticationToken', authdata.id_token);
+          //here we will save auth data to cookies and set current user data
+          userService.set(authdata);
 
-          var token = decodeToken(authdata.id_token);
-          $cookies.putObject('user_roles', token.auth);
-
-          $rootScope.globals = {
-            currentUser: {
-              username: credentials.login,
-              authdata: token
-            }
-          };
-          $cookies.putObject('globals', $rootScope.globals);
           deferred.resolve();
+
         }, function () {
           deferred.reject();
         });
@@ -41,7 +33,7 @@
     }
 
     return {
-      authenticate: authenticate
+      auth: auth
     };
   }
 })();
