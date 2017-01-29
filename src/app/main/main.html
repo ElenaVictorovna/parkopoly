@@ -5,18 +5,21 @@
   <md-content flex layout="row">
 
     <div layout="column" style="width: 256px">
+
       <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-open="true" md-disable-backdrop>
+
         <md-toolbar class="md-tall md-hue-2">
           <span flex></span>
           <div layout="column" class="md-toolbar-tools-bottom inset">
-          <div layout="column" layout-align="center">
-            <img class="user-avatar" ng-src="{{mainCtrl.user.picture}}"/>
-          </div>
-          <span></span>
-          <div>Bounjour {{mainCtrl.user.firstName}}</div>
+            <div class="user-avatar-wrapper" layout="column" layout-align="center">
+              <img ng-src="{{mainCtrl.user.picture}}"/>
+            </div>
+            <span></span>
+            <span>Bounjour {{mainCtrl.user.firstName}}</span>
           </div>
         </md-toolbar>
-        <md-list role="navigation">
+
+        <md-list role="navigation" class="md-hue-2">
           <md-item ng-repeat="item in mainCtrl.menu" >
           <a ui-sref="{{item.route}}" ui-sref-active="active">
           <md-item-content md-ink-ripple layout="row" layout-align="start center">

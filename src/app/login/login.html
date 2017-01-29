@@ -24,13 +24,14 @@
             <input
               type="email"
               name="email"
-              ng-model="user.email"
+              ng-model="credentials.email"
               placeholder="Votre email"
               required>
 
             <div ng-messages="userForm.email.$error"
                  ng-show="userForm.email.$invalid && (userForm.email.$touched || userForm.email.$submitted)">
               <div ng-message="required">Email requis.</div>
+              <div ng-message="email">Email n'est pas valide.</div>
             </div>
 
           </md-input-container>
@@ -38,7 +39,7 @@
           <md-input-container md-no-float="" class="md-block">
             <input
               type="password"
-              ng-model="user.password"
+              ng-model="credentials.password"
               name="password"
               placeholder="Votre mot de passe"
               ng-minlength="6"
@@ -58,8 +59,7 @@
             <md-button
               type="submit"
               class="md-raised md-warn animated infinite"
-              layout-align="right"
-              data-ng-disabled="userForm.$invalid">
+              layout-align="right">
               Se connecter
             </md-button>
           </md-card-actions>

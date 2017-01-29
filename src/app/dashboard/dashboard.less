@@ -1,82 +1,58 @@
-#login {
-  color: white;
-
-  header {
-    font-size: 0;
-    height: 64px;
-    padding: 8px 16px;
-    background-image: url("/assets/images/bg_header.png");
-    background-repeat: repeat-x;
-
-    md-nav-bar{
-      font-size: 14px;
-      md-nav-item{
-        padding: 0 4em;
-      }
-      a {
-        color: white;
-        text-decoration: none;
-      }
-    }
-
-    .md-nav-bar {
-      border: none;
-    }
-
-  }
-
-  main{
-    background: url("/assets/images/bg_home_main.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
-  h1{
-    font-size: 30px;
-    line-height: 30px;
-    font-weight: bold;
-    margin: 0;
-    text-transform: uppercase;
-  }
-
-  .userForm{
-    color: #424242;
-    background-color: white;
-    padding: 24px;
-    max-width: 450px;
-  }
-
-  .forgotPasswordLink{
-    font-size: 14px;
-    color: #424242;
-    float: right;
-    margin-top: 10px;
-  }
-
-  footer {
-    height: 56px;
-    background-color: #424242;
-  }
-
-  .fc-time-grid .fc-slats td {
-    height: 2.5em;
-  }
-}
-.alertPanel, .alertPanel>md-icon {
-  color: #ff5644;
-}
-
 #dashboard_page {
+  background-color: #efefef;
+  padding: 0 65px;
 
   header {
     height: 58px;
-    margin: 15px 65px;
-    background-color: #e74a1e;
+    margin: 15px 0;
+    padding: 0 38px;
+    background-color: @orangeColor;
     *{
       display: inline-block;
       color: white;
+      margin: 0;
+      line-height: 58px;
+    }
+    .control_buttons{
+      display: inline-block;
+      float: right;
+    }
+  }
+
+  md-card{
+    padding: 10px 10px 28px;
+    margin: 0;
+  }
+
+  .legendWrapper{
+    height: 74px;
+    line-height: 74px;
+    padding: 0 74px;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 38px;
+    *{
+      display: inline-block;
+    }
+    span{
+      margin-right: 30px;
+    }
+    .legend_color_block{
+      display: inline-block;
+      width: 52px;
+      height: 28px;
+      position: relative;
+      top: 7px;
+      margin-right: 8px;
+      -webkit-box-shadow: 0px 3px 7px -2px rgba(186,186,186);
+      -moz-box-shadow: 0px 3px 7px -2px rgba(186,186,186);
+      box-shadow: 0px 3px 7px -2px rgba(186,186,186);
+      &.active_event{
+        background-color: #bababa;
+      }
+      &.inactive_event{
+        background-color: #fbb03b;
+      }
     }
   }
 

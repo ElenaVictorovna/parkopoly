@@ -12,32 +12,23 @@
     var vm = this;
 
     vm.login = login;
-    vm.error = false;
-    vm.loading = false;
 
-    vm.user = {};
+    vm.credentials = {};
 
     function login() {
-      vm.loading = true;
-      vm.error = false;
       authenticationService
-        .auth(vm.user)
+        .auth(vm.credentials)
         .then(onAuthSuccess, onAuthError);
     }
 
     function onAuthSuccess(){
-      $location.path("/");
-      vm.loading = false;
-      vm.error = false;
+      $location.path('/');
       UserFactory.updateIntercom();
     }
 
     function onAuthError(){
-      $location.path("/login");
-      vm.loading = false;
-      vm.error = true;
+      $location.path('/login');
     }
-
 
     //$scope.showDialog = function(ev) {
     //  // var useFullScreen = ($mdMedia('sm') || ) && $scope.customFullscreen;
@@ -51,7 +42,7 @@
     //      fullscreen: $mdMedia('xs')
     //    })
     //    .then(function(answer) {
-    //      $scope.status = 'You said the information was "' + answer + '".';
+    //      $scope.status = 'You said the information was '' + answer + ''.';
     //    }, function() {
     //      $scope.status = 'You cancelled the dialog.';
     //    });
