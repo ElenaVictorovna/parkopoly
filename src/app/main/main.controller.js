@@ -5,13 +5,16 @@
     .module('main')
     .controller('MainController', MainController);
 
-  MainController.$inject = ['userService'];
+  MainController.$inject = ['$rootScope', 'userService'];
 
-  function MainController(userService) {
+  function MainController($rootScope, userService) {
 
     var vm = this;
 
-    userService.get().then(function(data){
+    vm.showSpinner = true;
+
+    userService.getUserInformation().then(function(data){
+      vm.showSpinner = false;
       vm.user = data;
     });
 

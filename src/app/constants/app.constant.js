@@ -26,6 +26,11 @@
                 }
             },
 
+            MISSION_STATUS: {
+                FINISHED: 'finished',
+                ONGOING: 'ongoing'
+            },
+
 
             FOLDER:{
                 IMAGES: 'assets/images/'

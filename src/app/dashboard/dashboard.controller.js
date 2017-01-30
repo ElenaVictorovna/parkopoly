@@ -7,9 +7,9 @@
     .module('dashboard')
     .controller('DashboardController', DashboardController);
 
-  DashboardController.$inject = ['uiCalendarConfig', 'backendApiFactory'];
+  DashboardController.$inject = ['uiCalendarConfig', 'missionService', 'appConstant'];
 
-  function DashboardController(uiCalendarConfig, backendApiFactory) {
+  function DashboardController(uiCalendarConfig, missionService, appConstant) {
 
     var vm = this;
 
@@ -19,12 +19,12 @@
     vm.currentDateString = moment().locale('fr').format('dddd Do MMMM YYYY');
     vm.eventSources = [];
 
-    backendApiFactory.getEventList()
+    missionService.getMissionList()
       .then(function(events) {
         vm.eventSources.push({
           events: events
         });
-
+console.log(events);
       });
 
     vm.prev = function() {
@@ -55,17 +55,8 @@
         columnFormat: 'dddd \r\n D',
         displayEventTime: false,
         viewRender: function(view) {
-
           setDateRange(view);
           customizeColumnHeader(view);
-
-        },
-        eventRender: function(event, element){
-
-          //add extra class to the active events in order to show them with different bg
-          if (event.active) {
-            element.addClass('active_event')
-          }
         }
       }
     };

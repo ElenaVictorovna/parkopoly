@@ -10,7 +10,8 @@
 
   function httpConfig($httpProvider) {
 
-    $httpProvider.interceptors.push('httpInterceptor');
+    // $httpProvider.interceptors.push('httpInterceptor');
+    $httpProvider.interceptors.push('authInterceptor');
   }
 
 })();

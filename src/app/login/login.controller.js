@@ -5,9 +5,9 @@
     .module('login')
     .controller('LoginController', LoginController);
 
-  LoginController.$inject = ['$state', '$mdDialog', 'authenticationService', 'appConstant'];
+  LoginController.$inject = ['$state', '$mdDialog', 'authenticationService', 'appConstant', 'userService'];
 
-  function LoginController($state, $mdDialog, authenticationService, appConstant) {
+  function LoginController($state, $mdDialog, authenticationService, appConstant, userService) {
 
     var vm = this;
 
@@ -33,6 +33,7 @@
     }
 
     function onAuthSuccess(){
+      userService.updateIntercom();
       $state.go(appConstant.STATES.DASHBOARD.NAME);
     }
 

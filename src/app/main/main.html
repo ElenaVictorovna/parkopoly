@@ -35,7 +35,16 @@
       </md-sidenav>
     </div>
 
-    <div layout="column" flex ui-view="content" class="page_content"></div>
+    <div layout="column" flex class="page_content">
+
+      <div ui-view="content" flex></div>
+
+      <div class="spinner_wrapper" layout="column" layout-align="center center" ng-show="mainCtrl.showSpinner">
+        <div class="spinner_bg"></div>
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+      </div>
+
+    </div>
 
   </md-content>
 
