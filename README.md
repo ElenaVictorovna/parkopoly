@@ -24,6 +24,8 @@ You can also run bower update and bower install to manage dependencies.
 To install **bower** globally, run command
 
   `npm install -g bower`
+  
+4. 'bower install'
 
 
 ## Run dev mode
