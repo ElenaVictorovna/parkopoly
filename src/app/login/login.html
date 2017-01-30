@@ -29,7 +29,7 @@
                 required>
 
               <div ng-messages="userForm.email.$error"
-                   ng-show="userForm.email.$invalid && (userForm.email.$touched || userForm.email.$submitted)">
+                   ng-show="userForm.email.$invalid && userForm.email.$submitted">
                 <div ng-message="required">Email requis.</div>
                 <div ng-message="email">Email n'est pas valide.</div>
               </div>
@@ -42,13 +42,11 @@
                 ng-model="credentials.password"
                 name="password"
                 placeholder="Votre mot de passe"
-                ng-minlength="6"
                 required>
 
               <div ng-messages="userForm.password.$error"
-                   ng-show="userForm.password.$invalid && (userForm.password.$touched || userForm.password.$submitted)">
+                   ng-show="userForm.password.$invalid && userForm.password.$submitted">
                 <div ng-message="required">Mot de passe requis.</div>
-                <div ng-message="minlength">Mot de passe doit avoir au moins 6 charactères.</div>
               </div>
 
               <a href="#" class="forgotPasswordLink" ng-click="loginCtrl.showResetDialog()">Mot de passe oublié ?</a>

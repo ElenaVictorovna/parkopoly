@@ -31,9 +31,15 @@
         allDay: false
       }, {
         title: 'NV',
-        start: new Date(y, m, d - 1, 9, 0),
-        end: new Date(y, m, d - 1, 11, 0),
+        start: new Date(y, m, d + 2, 9, 0),
+        end: new Date(y, m, d + 2, 11, 0),
         active: true,
+        allDay: false
+      }, {
+        title: 'NV',
+        start: new Date(y, m, d + 4, 12, 0),
+        end: new Date(y, m, d + 4, 17, 0),
+        active: false,
         allDay: false
       }]
 

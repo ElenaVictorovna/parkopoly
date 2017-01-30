@@ -9,7 +9,7 @@
     </md-button>
 
     <div class="control_buttons">
-      <md-button ng-click="dashboardCtrl.prev()">
+      <md-button ng-click="dashboardCtrl.prev()" aria-label="prev">
         <ng-md-icon icon="chevron_left"></ng-md-icon>
       </md-button>
       <span ng-if="dashboardCtrl.intervalStartMonth === dashboardCtrl.intervalEndMonth">
@@ -18,7 +18,7 @@
       <span ng-if="dashboardCtrl.intervalStartMonth !== dashboardCtrl.intervalEndMonth">
         Semaine du {{dashboardCtrl.intervalStartDay}} {{dashboardCtrl.intervalStartMonth}} au {{dashboardCtrl.intervalEndDay}} {{dashboardCtrl.intervalEndMonth}}
       </span>
-      <md-button ng-click="dashboardCtrl.next()">
+      <md-button ng-click="dashboardCtrl.next()"  aria-label="next">
         <ng-md-icon icon="chevron_right"></ng-md-icon>
       </md-button>
     </div>
@@ -30,7 +30,7 @@
          calendar="dashboardCtrl.calendar"></div>
   </md-card>
 
-  <div class="legendWrapper" layout="row">
+  <md-card class="legendWrapper" layout="row">
     <span>légendes</span>
     <div>
       <div class="legend_color_block active_event"></div>
@@ -40,5 +40,5 @@
       <div class="legend_color_block inactive_event"></div>
       <span>Bien déroulé ou pas d'action à venir</span>
     </div>
-  </div>
+  </md-card>
 </div>

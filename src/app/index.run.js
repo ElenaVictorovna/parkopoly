@@ -16,28 +16,13 @@
   }
 
   /** @ngInject */
-  function runBlock($log) {
+  function runBlock() {
 
-    $log.debug('runBlock end');
   }
 
-  function routeListener($rootScope, $http, $location, $cookies){
-    // keep user logged in after page refresh
-    $rootScope.globals = $cookies.getObject('globals') || {};
+  function routeListener(){
+    //redirect to login if user is unauthorized
 
-
-
-    //$rootScope.$on('$locationChangeStart', function (event, next, current) {
-    //  // redirect to login page if not logged in
-    //  if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
-    //    $location.path('/login');
-    //  }
-    //
-    //  if ($rootScope.globals.currentUser && $location.path() == '/login' ) {
-    //    $location.path('/');
-    //  }
-    //
-    //});
   }
 
 })();

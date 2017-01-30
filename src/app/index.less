@@ -105,6 +105,19 @@ section.jumbotron {
 @purpleColor: rgb(135, 0, 254);
 @turquoiseColor: rgb(79, 228, 179);
 
+/* MIXINS */
+.border-radius (@radius: border-radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.box-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+  -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+
 /* Common styles */
 .active{
   text-decoration: none;
@@ -123,4 +136,8 @@ section.jumbotron {
   *{
     color: white;
   }
+}
+
+md-dialog{
+  padding: 24px;
 }

@@ -2,11 +2,11 @@
 
   <page-header></page-header>
 
-  <md-content flex layout="row">
+  <md-content flex layout="row" class="content_wrapper">
 
     <div layout="column" style="width: 256px">
 
-      <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-open="true" md-disable-backdrop>
+      <md-sidenav class="md-sidenav-left md-whiteframe-z4" md-component-id="left" md-is-open="true" md-disable-backdrop>
 
         <md-toolbar class="md-tall md-hue-2">
           <span flex></span>
@@ -35,7 +35,7 @@
       </md-sidenav>
     </div>
 
-    <div layout="column" flex ui-view="content"></div>
+    <div layout="column" flex ui-view="content" class="page_content"></div>
 
   </md-content>
 
