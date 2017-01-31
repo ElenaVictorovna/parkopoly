@@ -27,17 +27,20 @@
     };
 
     function login() {
+      vm.error = false;
       authenticationService
         .auth(vm.credentials)
         .then(onAuthSuccess, onAuthError);
     }
 
     function onAuthSuccess(){
+      vm.error = false;
       userService.updateIntercom();
       $state.go(appConstant.STATES.DASHBOARD.NAME);
     }
 
     function onAuthError(){
+      vm.error = true;
       $state.go(appConstant.STATES.LOGIN.NAME);
     }
 

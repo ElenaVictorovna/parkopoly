@@ -7,9 +7,9 @@
     .module('dashboard')
     .controller('DashboardController', DashboardController);
 
-  DashboardController.$inject = ['uiCalendarConfig', 'missionService', 'appConstant'];
+  DashboardController.$inject = ['$rootScope', '$mdDialog', 'uiCalendarConfig', 'missionService'];
 
-  function DashboardController(uiCalendarConfig, missionService, appConstant) {
+  function DashboardController($rootScope, $mdDialog, uiCalendarConfig, missionService) {
 
     var vm = this;
 
@@ -19,12 +19,14 @@
     vm.currentDateString = moment().locale('fr').format('dddd Do MMMM YYYY');
     vm.eventSources = [];
 
+    $rootScope.showSpinner = true;
     missionService.getMissionList()
       .then(function(events) {
+        console.log(events);
+        $rootScope.showSpinner = false;
         vm.eventSources.push({
           events: events
         });
-console.log(events);
       });
 
     vm.prev = function() {
@@ -57,7 +59,8 @@ console.log(events);
         viewRender: function(view) {
           setDateRange(view);
           customizeColumnHeader(view);
-        }
+        },
+        eventClick: showMissionDetails
       }
     };
 
@@ -92,6 +95,24 @@ console.log(events);
       container.appendChild(dddd);
       container.appendChild(D);
       return container;
+    }
+
+    function showMissionDetails(event) {
+      var content = 'Mission\'s details';
+      $mdDialog.show({
+        templateUrl: '/app/dialogs/baseDialog.html',
+        clickOutsideToClose: true,
+        locals: {
+          content: content
+        },
+        controllerAs: 'dialog',
+        controller: function ($mdDialog, content) {
+          this.content = content;
+          this.closeDialog = function() {
+            $mdDialog.hide();
+          };
+        }
+      });
     }
 
 

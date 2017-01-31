@@ -12,7 +12,8 @@
           <span flex></span>
           <div layout="column" class="md-toolbar-tools-bottom inset">
             <div class="user_avatar_wrapper" layout="column" layout-align="center">
-              <img ng-src="{{mainCtrl.user.picture}}"/>
+              <img ng-show="mainCtrl.user.picture" ng-src="{{mainCtrl.user.picture}}"/>
+              <ng-md-icon ng-show="!mainCtrl.user.picture" icon="account_circle"></ng-md-icon>
             </div>
             <span></span>
             <span>Bounjour {{mainCtrl.user.firstName}}</span>
@@ -39,7 +40,7 @@
 
       <div ui-view="content" flex></div>
 
-      <div class="spinner_wrapper" layout="column" layout-align="center center" ng-show="mainCtrl.showSpinner">
+      <div class="spinner_wrapper" layout="column" layout-align="center center" ng-show="showSpinner">
         <div class="spinner_bg"></div>
         <md-progress-circular md-mode="indeterminate"></md-progress-circular>
       </div>

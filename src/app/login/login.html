@@ -19,6 +19,11 @@
               </a>
             </div>
 
+            <div ng-if="loginCtrl.error" class="alertPanel">
+              <md-icon md-font-set="material-icons">error</md-icon>
+              Authentification échouée
+            </div>
+
             <md-input-container md-no-float="" class="md-block">
               <input
                 type="email"
@@ -28,7 +33,7 @@
                 required>
 
               <div ng-messages="userForm.email.$error"
-                   ng-show="userForm.email.$invalid && userForm.email.$submitted">
+                   ng-show="userForm.email.$invalid && (userForm.password.$touched || userForm.password.$submitted)">
                 <div ng-message="required">Email requis.</div>
                 <div ng-message="email">Email n'est pas valide.</div>
               </div>
@@ -44,7 +49,7 @@
                 required>
 
               <div ng-messages="userForm.password.$error"
-                   ng-show="userForm.password.$invalid && userForm.password.$submitted">
+                   ng-show="userForm.password.$invalid && (userForm.password.$touched || userForm.password.$submitted)">
                 <div ng-message="required">Mot de passe requis.</div>
               </div>
 
@@ -62,6 +67,7 @@
             </div>
 
           </form>
+
         </div>
 
       </div>

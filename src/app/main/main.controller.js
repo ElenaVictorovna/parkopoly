@@ -11,10 +11,9 @@
 
     var vm = this;
 
-    vm.showSpinner = true;
 
     userService.getUserInformation().then(function(data){
-      vm.showSpinner = false;
+      $rootScope.showSpinner = false;
       vm.user = data;
     });
 

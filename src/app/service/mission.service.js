@@ -20,13 +20,18 @@
     function transformMissionsToUiCalendarFormat(missionList) {
       missionList.forEach(function(mission) {
 
-        mission.title = 'hello';
+        mission.title = mission.summary;
         mission.end = mission.stop;
 
-        if (mission.description.missionStatus === appConstant.MISSION_STATUS.ONGOING) {
-          mission.className = 'active_mission';
-        } else if (mission.description.missionStatus === appConstant.MISSION_STATUS.NOT_ASSIGNED) {
-          mission.className = 'unassigned_mission';
+        switch (mission.description.missionStatus) {
+          case appConstant.MISSION_STATUS.ONGOING:
+            mission.className = 'active_mission';
+            break;
+          case appConstant.MISSION_STATUS.NOT_ASSIGNED:
+            mission.className = 'unassigned_mission';
+            break;
+          default:
+            mission.className = 'inactive_mission';
         }
 
       });
