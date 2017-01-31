@@ -15,7 +15,6 @@
 
     vm.calendar = {};
 
-    vm.currentDate = new Date();
     vm.currentDateString = moment().locale('fr').format('dddd Do MMMM YYYY');
     vm.eventSources = [];
 
@@ -52,15 +51,10 @@
         minTime: '08:00:00',
         maxTime: '21:00:00',
         eventLimit: true,
-        views: {
-          agenda: {
-            eventLimit: 2
-          }
-        },
         slotLabelFormat: 'H[h]mm',
         firstDay: 1,
         header: false,
-        columnFormat: 'dddd \r\n D',
+        columnFormat: 'dddd D',
         displayEventTime: false,
         viewRender: function(view) {
           setDateRange(view);
