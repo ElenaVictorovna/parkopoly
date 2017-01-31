@@ -5,9 +5,9 @@
     .module('main')
     .controller('MainController', MainController);
 
-  MainController.$inject = ['$rootScope', 'userService'];
+  MainController.$inject = ['userService'];
 
-  function MainController($rootScope, userService) {
+  function MainController(userService) {
 
     var vm = this;
 
