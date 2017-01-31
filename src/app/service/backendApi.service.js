@@ -4,17 +4,15 @@
   angular.module('parkopoly')
     .factory('backendApiFactory', backendApiFactory);
 
-  backendApiFactory.$inject = ['$rootScope', '$http'];
+  backendApiFactory.$inject = ['$http'];
 
-  function backendApiFactory($rootScope, $http) {
+  function backendApiFactory($http) {
 
     function authenticate(credentials) {
-
       return $http.post('https://pro.parkopoly.fr/api/users/authenticate', credentials)
         .then(function(authdata){
           return authdata.data;
       });
-
     }
 
     function getMissionList() {
