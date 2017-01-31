@@ -13,7 +13,6 @@
 
 
     userService.getUserInformation().then(function(data){
-      $rootScope.showSpinner = false;
       vm.user = data;
     });
 

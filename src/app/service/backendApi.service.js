@@ -18,10 +18,8 @@
     }
 
     function getMissionList() {
-      $rootScope.showSpinner = true;
       return $http.get('https://pro.parkopoly.fr/api/mission')
         .then(function(response){
-          // $rootScope.showSpinner = false;
           return response.data;
         });
     }
