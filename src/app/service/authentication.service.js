@@ -5,9 +5,9 @@
     .module('parkopoly')
     .factory('authenticationService', authenticationService);
 
-  authenticationService.$inject = ['$q', '$cookies', '$window', '$rootScope', 'backendApiFactory', 'userService'];
+  authenticationService.$inject = ['$cookies', '$window', '$rootScope', 'backendApiFactory'];
 
-  function authenticationService($q, $cookies, $window, $rootScope, backendApiFactory, userService) {
+  function authenticationService($cookies, $window, $rootScope, backendApiFactory) {
 
     /**
      * Authenticate a user and store auth data in cookie
@@ -36,19 +36,6 @@
           return token;
         });
     }
-
-      // backendApiFactory.authenticate(credentials)
-      //   .then(function (authdata) {
-      //
-      //     //here we will save auth data to cookies and set current user data
-      //     userService.set(authdata);
-      //
-      //     deferred.resolve();
-      //
-      //   }, function () {
-      //     deferred.reject();
-      //   });
-
 
     // from https://github.com/auth0/angular-jwt/blob/master/src/angularJwt/services/jwt.js
     function decodeToken(token) {
