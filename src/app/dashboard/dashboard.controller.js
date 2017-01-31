@@ -51,6 +51,12 @@
         nowIndicator: true,
         minTime: '08:00:00',
         maxTime: '21:00:00',
+        eventLimit: true,
+        views: {
+          agenda: {
+            eventLimit: 2
+          }
+        },
         slotLabelFormat: 'H[h]mm',
         firstDay: 1,
         header: false,
