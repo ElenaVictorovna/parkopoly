@@ -7,24 +7,25 @@
     .module('dashboard')
     .controller('DashboardController', DashboardController);
 
-  DashboardController.$inject = ['uiCalendarConfig', 'backendApiFactory'];
+  DashboardController.$inject = ['$rootScope', '$mdDialog', 'uiCalendarConfig', 'missionService'];
 
-  function DashboardController(uiCalendarConfig, backendApiFactory) {
+  function DashboardController($rootScope, $mdDialog, uiCalendarConfig, missionService) {
 
     var vm = this;
 
     vm.calendar = {};
 
-    vm.currentDate = new Date();
     vm.currentDateString = moment().locale('fr').format('dddd Do MMMM YYYY');
     vm.eventSources = [];
 
-    backendApiFactory.getEventList()
+    $rootScope.showSpinner = true;
+    missionService.getMissionList()
       .then(function(events) {
+        console.log(events);
+        $rootScope.showSpinner = false;
         vm.eventSources.push({
           events: events
         });
-
       });
 
     vm.prev = function() {
@@ -49,24 +50,17 @@
         nowIndicator: true,
         minTime: '08:00:00',
         maxTime: '21:00:00',
+        eventLimit: true,
         slotLabelFormat: 'H[h]mm',
         firstDay: 1,
         header: false,
-        columnFormat: 'dddd \r\n D',
+        columnFormat: 'dddd D',
         displayEventTime: false,
         viewRender: function(view) {
-
           setDateRange(view);
           customizeColumnHeader(view);
-
         },
-        eventRender: function(event, element){
-
-          //add extra class to the active events in order to show them with different bg
-          if (event.active) {
-            element.addClass('active_event')
-          }
-        }
+        eventClick: showMissionDetails
       }
     };
 
@@ -101,6 +95,24 @@
       container.appendChild(ddddFormatWrapper);
       container.appendChild(DFormatWrapper);
       return container;
+    }
+
+    function showMissionDetails(event) {
+      var content = 'Mission\'s details';
+      $mdDialog.show({
+        templateUrl: '/app/dialogs/baseDialog.html',
+        clickOutsideToClose: true,
+        locals: {
+          content: content
+        },
+        controllerAs: 'dialog',
+        controller: function ($mdDialog, content) {
+          this.content = content;
+          this.closeDialog = function() {
+            $mdDialog.hide();
+          };
+        }
+      });
     }
 
 

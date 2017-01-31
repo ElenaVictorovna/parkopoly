@@ -20,9 +20,21 @@
 
   }
 
-  function routeListener(){
-    //redirect to login if user is unauthorized
+  function routeListener($rootScope, $location, $cookies){
+    // keep user logged in after page refresh
+    $rootScope.globals = $cookies.getObject('globals') || {};
 
+    $rootScope.$on('$stateChangeStart', function (event, next, current) {
+      // redirect to login page if not logged in
+      if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
+        $location.path('/login');
+      }
+
+      // if ($rootScope.globals.currentUser && $location.path() == '/login' ) {
+      //   $location.path('/dashboard');
+      // }
+
+    });
   }
 
 })();

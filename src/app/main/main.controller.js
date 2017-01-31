@@ -11,7 +11,8 @@
 
     var vm = this;
 
-    userService.get().then(function(data){
+
+    userService.getUserInformation().then(function(data){
       vm.user = data;
     });
 
