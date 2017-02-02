@@ -97,7 +97,7 @@
       return container;
     }
 
-    function showMissionDetails(event) {
+    function showMissionDetails() {
       var content = 'Mission\'s details';
       $mdDialog.show({
         templateUrl: '/app/dialogs/baseDialog.html',
