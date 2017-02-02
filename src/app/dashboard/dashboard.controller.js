@@ -75,25 +75,25 @@
     }
 
     function customizeColumnHeader(view) {
-      var angularEl, theDate;
+      var angularEl, date;
       angular.element(view.el).find('th').each(function() {
         angularEl = angular.element(this);
         if ( angularEl.hasClass('fc-axis') ) {
           return;
         }
-        theDate = moment(angularEl.data('date'));
-        angularEl.html(buildDateColumnHeader(theDate));
+        date = moment(angularEl.data('date'));
+        angularEl.html(buildDateColumnHeader(date));
       });
     }
 
-    function buildDateColumnHeader(theDate) {
+    function buildDateColumnHeader(date) {
       var container = document.createElement('div');
-      var dddd = document.createElement('div');
-      var D = document.createElement('span');
-      dddd.textContent = theDate.format('dddd');
-      D.textContent = theDate.format('D');
-      container.appendChild(dddd);
-      container.appendChild(D);
+      var ddddFormatWrapper = document.createElement('div');
+      var DFormatWrapper = document.createElement('span');
+      ddddFormatWrapper.textContent = date.format('dddd');
+      DFormatWrapper.textContent = date.format('D');
+      container.appendChild(ddddFormatWrapper);
+      container.appendChild(DFormatWrapper);
       return container;
     }
 
