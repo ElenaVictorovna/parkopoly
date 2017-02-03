@@ -1,64 +1,18 @@
 # Parkopoly Web
 
-## Dependencies 
+To run the application node and bower should be installed globally
 
-This Angular Application was generated using Yeoman generator-gulp-angular.
+Command to run the app:
 
-Before You can build this project, you must install and configure the following dependencies on your machine:
- 
- 1. **Node.js**: We use Node to run a development web server and build the project.
- 
- After installing node,   you should be able to run the following command to install development tools
- (dependencies are described in **package.json**)
- 
-  `npm install`
- 
-2. We use **Gulp** as our build system. Install gulp  command-line tool globally with:
+1) npm install
 
-  `npm install -g gulp`
+2) bower install
 
-3. **Bower** is used to manage dependencies used in this application. 
-You can upgrade dependencies by specifying a newer version in bower.json.
-You can also run bower update and bower install to manage dependencies. 
+3) bower update
 
-To install **bower** globally, run command
+4) gulp build
 
-  `npm install -g bower`
-  
-4. 'bower install'
-
-
-## Run dev mode
-
-Run the following command to start development mode experience, the browser
-auto-refreshes when changing are made on the app files.
-In the next command line, replace **profile** by local, test or prod.
-
-  `gulp serve --profil`
-
-## Build the app
-
-To build application, run the command with suitable profile (local, test, prod)
-Default profile is local. Replace **profile** in the next command line.
-
-  `gulp build --profile`  (build app)
-  
-  **or**
-  
-  `gulp --profile`  (clean app then buil)
-
-## Test the app
-
-### Unit tests
-
-Running `gulp test` will run the unit tests with karma.
-
-## Clean the app
-
-To remove builded artifacts, run command
-
-  `gulp clean`
-
+5) gulp serve -profil
 
 
 
