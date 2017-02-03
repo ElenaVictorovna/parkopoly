@@ -1,53 +1,34 @@
-<div id="account" layout="column" layout-fill>
+<div id="main" layout="row" flex>
 
-  <page-header></page-header>
-
-  <md-content flex layout="row" class="content_wrapper">
-
-    <div layout="column" style="width: 256px">
-
-      <md-sidenav class="md-sidenav-left md-whiteframe-z4" md-component-id="left" md-is-open="true" md-disable-backdrop>
-
-        <md-toolbar class="md-tall md-hue-2">
-          <span flex></span>
-          <div layout="column" class="md-toolbar-tools-bottom inset">
-            <div class="user_avatar_wrapper" layout="column" layout-align="center">
-              <img ng-show="mainCtrl.user.picture" ng-src="{{mainCtrl.user.picture}}"/>
-              <ng-md-icon ng-show="!mainCtrl.user.picture" icon="account_circle"></ng-md-icon>
-            </div>
-            <span></span>
-            <span>Bounjour {{mainCtrl.user.firstName}}</span>
-          </div>
-        </md-toolbar>
-
-        <md-list role="navigation" class="md-hue-2">
-          <md-item ng-repeat="item in mainCtrl.menu" >
+  <div layout="column" class="sidenav_wrapper">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z4" md-is-open="true" md-disable-backdrop>
+      <md-list role="navigation" class="md-hue-2" layout="column" layout-fill>
+        <md-item>
+          <img src="logo.png" />
+        </md-item>
+        <md-item ng-repeat="item in mainCtrl.menu">
           <a ui-sref="{{item.route}}" ui-sref-active="active">
-            <md-item-content md-ink-ripple layout="row" layout-align="start center">
-              <div class="inset">
+            <md-item-content md-ink-ripple>
+              <div>
                 <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
               </div>
-              <div class="inset">{{item.title}}</div>
+              <div>{{item.title}}</div>
             </md-item-content>
           </a>
-          </md-item>
-        </md-list>
-      </md-sidenav>
-    </div>
+        </md-item>
+      </md-list>
+    </md-sidenav>
+  </div>
 
-    <div layout="column" flex class="page_content">
-
+  <div layout="column" flex>
+    <md-content layout="column" flex class="page_content">
       <div ui-view="content" flex></div>
-
-      <div class="spinner_wrapper" layout="column" layout-align="center center" ng-show="showSpinner">
+        <div class="spinner_wrapper" layout="column" layout-align="center center" ng-show="showSpinner">
         <div class="spinner_bg"></div>
         <md-progress-circular md-mode="indeterminate"></md-progress-circular>
       </div>
+    </md-content>
+  </div>
 
-    </div>
-
-  </md-content>
-
-  <page-footer></page-footer>
 
 </div>

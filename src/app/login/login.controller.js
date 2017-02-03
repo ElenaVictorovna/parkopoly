@@ -44,8 +44,6 @@
       $state.go(appConstant.STATES.LOGIN.NAME);
     }
 
-
-
   }
 
 })();

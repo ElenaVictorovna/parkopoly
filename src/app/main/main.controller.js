@@ -11,7 +11,6 @@
 
     var vm = this;
 
-
     userService.getUserInformation().then(function(data){
       vm.user = data;
     });
@@ -19,28 +18,32 @@
     vm.menu = [
       {
         route: 'main.dashboard',
-        title: 'Dashboard',
-        icon: 'account_box'
+        title: 'Calendar',
+        icon: 'today'
       }, {
         route: 'main.createMission',
-        title: 'Creer une mission',
+        title: 'Creer',
         icon: 'send'
       }, {
         route: 'main.missionList',
-        title: 'Visualiser less missions',
-        icon: 'flag'
+        title: 'Liste',
+        icon: 'list'
       }, {
         route: 'main.pointsOfSale',
-        title: 'Comptes utilisateurs at points de vende',
-        icon: 'local_offer'
+        title: 'Utilisateurs',
+        icon: 'person'
       }, {
         route: 'main.facturation',
         title: 'Facturation',
-        icon: 'shopping_cart'
+        icon: 'euro_symbol'
       }, {
         route: 'main.profile',
-        title: 'Informations personnelles',
-        icon: 'group'
+        title: 'Parametres',
+        icon: 'settings'
+      }, {
+        route: 'main.statistic',
+        title: 'Statistiques',
+        icon: 'timeline'
       }
     ];
 

@@ -10,11 +10,6 @@
                   NAME: 'login'
                 },
 
-                CONTACTS: {
-                  URL: '/contacts',
-                  NAME: 'contacts'
-                },
-
                 MAIN: {
                   URL: '/',
                   NAME: 'main'
@@ -24,16 +19,12 @@
                   URL: 'dashboard',
                   NAME: 'main.dashboard'
                 }
+
             },
 
             MISSION_STATUS: {
                 FINISHED: 'finished',
                 ONGOING: 'ongoing'
-            },
-
-
-            FOLDER:{
-                IMAGES: 'assets/images/'
             }
 
         });

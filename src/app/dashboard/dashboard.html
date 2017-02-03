@@ -1,46 +1,8 @@
 <div id="dashboard_page">
 
-  <header flex="100" layout="row">
+  <div ui-calendar="dashboardCtrl.uiConfig.calendar"
+       ng-model="dashboardCtrl.eventSources"
+       calendar="dashboardCtrl.calendar">
+  </div>
 
-    <h4 class="md-headline" layout="column">Mon agenda</h4>
-
-    <md-button ng-click="dashboardCtrl.today()" layout="column" flex>
-      {{dashboardCtrl.currentDateString}}
-    </md-button>
-
-    <div class="control_buttons" layout="column">
-      <md-button ng-click="dashboardCtrl.prev()" aria-label="prev">
-        <ng-md-icon icon="chevron_left"></ng-md-icon>
-      </md-button>
-      <span ng-if="dashboardCtrl.intervalStartMonth === dashboardCtrl.intervalEndMonth">
-        Semaine du {{dashboardCtrl.intervalStartDay}}
-        au {{dashboardCtrl.intervalEndDay}} {{dashboardCtrl.intervalStartMonth}}
-      </span>
-      <span ng-if="dashboardCtrl.intervalStartMonth !== dashboardCtrl.intervalEndMonth">
-        Semaine du {{dashboardCtrl.intervalStartDay}} {{dashboardCtrl.intervalStartMonth}}
-        au {{dashboardCtrl.intervalEndDay}} {{dashboardCtrl.intervalEndMonth}}
-      </span>
-      <md-button ng-click="dashboardCtrl.next()"  aria-label="next">
-        <ng-md-icon icon="chevron_right"></ng-md-icon>
-      </md-button>
-    </div>
-  </header>
-
-  <md-card class="calendarWrapper">
-    <div ui-calendar="dashboardCtrl.uiConfig.calendar"
-         ng-model="dashboardCtrl.eventSources"
-         calendar="dashboardCtrl.calendar"></div>
-  </md-card>
-
-  <md-card class="legendWrapper" layout="row">
-    <span>légendes</span>
-    <div>
-      <div class="legend_color_block active_mission"></div>
-      <span>Incidents ou action à venir</span>
-    </div>
-    <div>
-      <div class="legend_color_block inactive_mission"></div>
-      <span>Bien déroulé ou pas d'action à venir</span>
-    </div>
-  </md-card>
 </div>

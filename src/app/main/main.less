@@ -1,4 +1,4 @@
-#account{
+#main{
   .content_wrapper{
     overflow: hidden;
     .page_content{
@@ -7,40 +7,19 @@
       background-color: #efefef;
     }
   }
-  md-sidenav{
-    max-width: 256px;
-    color: @darkGreyColor;
-    .box-shadow(0px, 8px, 56px, 0.2);
-    md-toolbar{
-      height: 146px;
-      padding-left: 14px;
-      background-color: #ebebeb;
-      font-size: 14px;
-      .user_avatar_wrapper{
-        margin-bottom: 10px;
-        img{
-          width: 60px;
-          height: 60px;
-          .border-radius(50%);
-        }
-        ng-md-icon{
-          width: 60px;
-          height: 60px;
-          font-size: 60px;
-          margin: 0;
-          svg {
-            width: 60px;
-            height: 60px;
+  .sidenav_wrapper{
+    width: 100px;
+    md-sidenav{
+      width: 100px;
+      background-color: @darkGreyColor;
+      md-list{
+        md-item{
+          width: 100px;
+          height: 100px;
+          * {
+            color: white;
           }
         }
-      }
-    }
-    md-list{
-      padding-left: 14px;
-      color: #424242;
-      font-size: 14px;
-      ng-md-icon{
-        font-weight: normal;
       }
     }
   }

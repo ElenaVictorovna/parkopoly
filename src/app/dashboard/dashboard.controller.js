@@ -18,15 +18,15 @@
     vm.currentDateString = moment().locale('fr').format('dddd Do MMMM YYYY');
     vm.eventSources = [];
 
-    $rootScope.showSpinner = true;
-    missionService.getMissionList()
-      .then(function(events) {
-        console.log(events);
-        $rootScope.showSpinner = false;
-        vm.eventSources.push({
-          events: events
-        });
-      });
+    // $rootScope.showSpinner = true;
+    // missionService.getMissionList()
+    //   .then(function(events) {
+    //     console.log(events);
+    //     $rootScope.showSpinner = false;
+    //     vm.eventSources.push({
+    //       events: events
+    //     });
+    //   });
 
     vm.prev = function() {
       uiCalendarConfig.calendars['dashboardCtrl.calendar'].fullCalendar('prev');
@@ -38,11 +38,12 @@
       uiCalendarConfig.calendars['dashboardCtrl.calendar'].fullCalendar('today');
     };
 
+
     vm.uiConfig = {
       calendar: {
+        schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
         lang: 'fr',
         dayNames: dayNamesFr,
-        height: 700,
         slotDuration: '01:00:00',
         editable: false,
         defaultView: 'agendaWeek',
@@ -53,7 +54,11 @@
         eventLimit: true,
         slotLabelFormat: 'H[h]mm',
         firstDay: 1,
-        header: false,
+        header: {
+          left: 'title prev,next',
+          right: 'month,agendaWeek,agendaDay'
+        },
+        slotEventOverlap: false,
         columnFormat: 'dddd D',
         displayEventTime: false,
         viewRender: function(view) {
@@ -78,7 +83,7 @@
       var angularEl, date;
       angular.element(view.el).find('th').each(function() {
         angularEl = angular.element(this);
-        if ( angularEl.hasClass('fc-axis') ) {
+        if ( angularEl.hasClass('fc-axis') || angularEl.hasClass('fc-resource-cell') ) {
           return;
         }
         date = moment(angularEl.data('date'));
